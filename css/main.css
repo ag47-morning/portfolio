@@ -113,7 +113,7 @@ body, p, span, pre, i, b, a {
   text-indent: -9999em;
   overflow: hidden; }
 
-header, footer {
+footer {
   width: 100%; }
 
 #container {
@@ -121,14 +121,135 @@ header, footer {
   #container section {
     max-width: 1000px;
     position: relative;
-    height: 90vh;
-    margin: 5vh auto; }
+    height: 100vh;
+    margin: 0 auto;
+    padding: 5vh 0; }
     #container section:after {
       content: '';
       display: block;
       visibility: hidden;
       clear: both; }
-  footer {
+  footer, #hd {
     position: relative; }
+
+#empty {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #00ffbc;
+  opacity: 0.2;
+  display: none;
+  z-index: 90; }
+
+#empty.open {
+  display: block; }
+
+/* header */
+header {
+  position: fixed;
+  width: 20%;
+  height: 100vh;
+  left: 100%;
+  top: 0;
+  z-index: 99; }
+  header #mark {
+    position: absolute;
+    top: 30%;
+    left: -62.5px;
+    width: 62.5px;
+    height: 50px;
+    cursor: pointer; }
+    header #mark .bars {
+      height: 4px;
+      background: #fff;
+      display: block;
+      border-radius: 10px;
+      transition: width .3s;
+      margin-bottom: 9px;
+      width: 100%; }
+      header #mark .bars:nth-child(1) {
+        width: 75%; }
+      header #mark .bars:nth-child(2) {
+        width: 50%; }
+      header #mark .bars:nth-child(3) {
+        width: 60%;
+        margin-bottom: 0; }
+    header #mark .box {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      background: #00ffbc;
+      box-sizing: border-box;
+      padding: 10px;
+      z-index: 3; }
+    header #mark .tail {
+      width: 12.5px;
+      height: 12.5px;
+      border-width: 25px;
+      border-style: solid;
+      position: absolute;
+      left: -12.5px;
+      top: 0;
+      box-sizing: border-box; }
+      header #mark .tail.up {
+        border-color: #00ffbc #00ffbc transparent transparent; }
+      header #mark .tail.down {
+        border-color: transparent #00ffbc #00ffbc transparent; }
+    header #mark:hover .bars, header #mark.open .bars {
+      width: 100%; }
+
+#hd {
+  width: 100%;
+  background: #00ffbc;
+  height: 100%; }
+  #hd .hd1li {
+    padding: 15px 15%;
+    font-size: 1.3em; }
+    #hd .hd1li a {
+      font-family: "NEXON Lv2 Gothic Bold", sans-serif;
+      color: #fff;
+      display: inline-block;
+      width: 100%;
+      line-height: 2;
+      transition: color 0.24s;
+      text-transform: uppercase;
+      position: relative; }
+    #hd .hd1li a::after {
+      content: '';
+      width: 0%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      height: 2px;
+      border-radius: 10px;
+      background: #002118;
+      transition: width 0.24s; }
+    #hd .hd1li:hover, #hd .hd1li.active a {
+      color: #002118; }
+    #hd .hd1li.active a::after {
+      width: 70%; }
+  #hd p {
+    color: #fff;
+    font-family: "NEXON Lv2 Gothic Bold", sans-serif; }
+    #hd p:first-child {
+      margin-bottom: 30%;
+      padding: 40px 15% 0;
+      font-size: 1.3em; }
+    #hd p:last-child {
+      font-size: 0.83em;
+      position: absolute;
+      bottom: 40px;
+      left: 10%;
+      padding: 0; }
+
+/* header 끝 */
+/* body */
+/* body 끝 */
+/* footer */
+/* footer 끝 */
 
 /*# sourceMappingURL=main.css.map */
