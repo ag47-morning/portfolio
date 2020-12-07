@@ -45,5 +45,8 @@ $(function(){
         }
         else $("header").stop().animate({left:"100%"},300);
     })
-    
+})
+
+$(document).ready(function(){
+    $(".flow_item").slideDown();
 })

@@ -248,6 +248,134 @@ header {
 
 /* header 끝 */
 /* body */
+#home {
+  max-width: 100% !important;
+  text-align: center;
+  overflow: hidden; }
+  #home .flow_wr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 60px solid #00ffbc;
+    box-sizing: border-box; }
+@-webkit-keyframes flow {
+  0% {
+    top: -10%; }
+  100% {
+    top: 110%; } }
+@keyframes flow {
+  0% {
+    top: -10%; }
+  100% {
+    top: 110%; } }
+@-webkit-keyframes shake {
+  0%, 100% {
+    transform: translateX(0); }
+  50% {
+    transform: translateX(150px); } }
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0); }
+  50% {
+    transform: translateX(150px); } }
+    #home .flow_wr .flow_item {
+      font-size: 2.4em;
+      font-family: "NEXON Lv2 Gothic Bold", sans-serif;
+      color: #00ffbc;
+      position: absolute;
+      top: -10%;
+      z-index: 8;
+      cursor: default;
+      opacity: 0.2;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-animation-name: flow, shake;
+      animation-name: flow, shake;
+      -webkit-animation-duration: 10s, 3s;
+      animation-duration: 10s, 3s;
+      -webkit-animation-timing-function: linear,ease-in-out;
+      animation-timing-function: linear, ease-in-out;
+      -webkit-animation-iteration-count: infinite,infinite;
+      animation-iteration-count: infinite, infinite;
+      -webkit-animation-play-state: running,running;
+      animation-play-state: running, running; }
+      #home .flow_wr .flow_item:nth-child(1) {
+        left: -5%;
+        -webkit-animation-delay: 0s, 0s;
+        animation-delay: 0s, 0s; }
+      #home .flow_wr .flow_item:nth-child(2) {
+        left: 15%;
+        -webkit-animation-delay: 1s, 1s;
+        animation-delay: 1s, 1s; }
+      #home .flow_wr .flow_item:nth-child(3) {
+        left: 30%;
+        -webkit-animation-delay: 2s, 2s;
+        animation-delay: 2s, 2s; }
+      #home .flow_wr .flow_item:nth-child(4) {
+        left: 15%;
+        -webkit-animation-delay: 3s, 1s;
+        animation-delay: 3s, 2s; }
+      #home .flow_wr .flow_item:nth-child(5) {
+        left: 40%;
+        -webkit-animation-delay: 4s, 2s;
+        animation-delay: 4s, 2s; }
+      #home .flow_wr .flow_item:nth-child(6) {
+        left: 60%;
+        -webkit-animation-delay: 3s, 8s;
+        animation-delay: 3s, 8s; }
+      #home .flow_wr .flow_item:nth-child(7) {
+        left: 60%;
+        -webkit-animation-delay: 1s, 1s;
+        animation-delay: 1s, 1s; }
+      #home .flow_wr .flow_item:nth-child(8) {
+        left: 85%;
+        -webkit-animation-delay: 2s, 8s;
+        animation-delay: 2s, 8s; }
+      #home .flow_wr .flow_item:nth-child(9) {
+        left: 75%;
+        -webkit-animation-delay: 0s, 2s;
+        animation-delay: 0s, 2s; }
+      #home .flow_wr .flow_item:nth-child(10) {
+        left: 10%;
+        -webkit-animation-delay: 4s, 3s;
+        animation-delay: 4s, 3s; }
+      #home .flow_wr .flow_item:nth-child(11) {
+        left: 70%;
+        -webkit-animation-delay: 8s, 2s;
+        animation-delay: 8s, 2s; }
+      #home .flow_wr .flow_item:nth-child(12) {
+        left: 85%;
+        -webkit-animation-delay: 7s, 1s;
+        animation-delay: 7s, 1s; }
+      #home .flow_wr .flow_item:nth-child(13) {
+        left: 50%;
+        -webkit-animation-delay: 6s, 4s;
+        animation-delay: 6s, 4s; }
+      #home .flow_wr .flow_item:nth-child(14) {
+        left: 80%;
+        -webkit-animation-delay: 4.5s, 1s;
+        animation-delay: 4.5s, 1s; }
+      #home .flow_wr .flow_item:nth-child(15) {
+        left: 30%;
+        -webkit-animation-delay: 5.5s, 2s;
+        animation-delay: 5.5s, 2s; }
+      #home .flow_wr .flow_item:nth-child(16) {
+        left: 40%;
+        -webkit-animation-delay: 8s, 4s;
+        animation-delay: 8s, 4s; }
+      #home .flow_wr .flow_item:nth-child(17) {
+        left: 10%;
+        -webkit-animation-delay: 9s, 1.5s;
+        animation-delay: 9s, 1.5s; }
+      #home .flow_wr .flow_item:nth-child(18) {
+        left: 1%;
+        -webkit-animation-delay: 6s, 2s;
+        animation-delay: 6s, 2s; }
+
 /* body 끝 */
 /* footer */
 /* footer 끝 */
