@@ -46,7 +46,7 @@ footer {width: 100%;}
     width: 100%;
     $por : relative;
     section {
-        max-width: 1000px; position:$por; height: 100vh; margin: 0 auto; padding: 5vh 0;
+        width: 1000px; position:$por; height: 100vh; margin: 0 auto; padding: 5vh 0;
         &:after { content:''; display: block; visibility: hidden; clear: both;}
     }
     @at-root footer, #hd {position: $por;}

@@ -10,7 +10,6 @@ $(function(){
         secTop = Number(secTop);
         hdArray.push(secTop);
     }
-    // console.log(hdArray);
     $(window).on("mousewheel DOMMousewheel scroll", function(){
         var winH = $(this).scrollTop();
         if(winH < (hdArray[1]-150)) index = 0;
@@ -45,8 +44,33 @@ $(function(){
         }
         else $("header").stop().animate({left:"100%"},300);
     })
-})
+}) 
+/////////// head event finish ///////////
 
 $(document).ready(function(){
-    $(".flow_item").slideDown();
+    /////////// #home event ///////////
+    var a = 0;
+    var b;
+    var c = 0;
+    var flipTime = 2000;
+    var flip_item = $("#home .flip_item");
+    var flipOption = new Array();
+    for (var h = 0; h <flip_item.length; h++) {
+        b = flip_item.eq(h).css('transform');
+        flipOption.push(b);
+    }
+    console.log(flipOption);
+
+    function flipDown() {
+
+        $("#flip").css('transform','rotateX('+(c*90)+'deg)');
+        flip_item.css('opacity',0);
+        flip_item.eq(a).stop().animate({opacity:1},flipTime/100);
+        a++; c++;
+        if (a >=flip_item.length) a = 0;
+        flip_item.eq(a).stop().animate({opacity:0},flipTime/10);
+
+    }
+
+    setInterval(function(){flipDown();},flipTime);
 })

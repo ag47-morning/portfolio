@@ -119,7 +119,7 @@ footer {
 #container {
   width: 100%; }
   #container section {
-    max-width: 1000px;
+    width: 1000px;
     position: relative;
     height: 100vh;
     margin: 0 auto;
@@ -281,14 +281,13 @@ header {
   50% {
     transform: translateX(150px); } }
     #home .flow_wr .flow_item {
-      font-size: 2.4em;
+      font-size: 4vw;
       font-family: "NEXON Lv2 Gothic Bold", sans-serif;
       color: #00ffbc;
       position: absolute;
       top: -10%;
-      z-index: 8;
       cursor: default;
-      opacity: 0.2;
+      opacity: 0.1;
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
@@ -375,6 +374,56 @@ header {
         left: 1%;
         -webkit-animation-delay: 6s, 2s;
         animation-delay: 6s, 2s; }
+  #home .sec_wr {
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    font-size: 2em;
+    line-height: 1.6;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+    perspective-origin: 50%;
+    -webkit-perspective-origin: 50%; }
+    #home .sec_wr #flip {
+      position: relative;
+      width: 100%;
+      height: 100px;
+      z-index: 3;
+      transition: .2s;
+      transform-style: preserve-3d; }
+      #home .sec_wr #flip .flip_item {
+        position: absolute;
+        width: 100%;
+        top: 25%;
+        left: 0;
+        backface-visibility: hidden;
+        background: transparent;
+        font-size: 1.5em;
+        transition: .2s;
+        line-height: 1;
+        opacity: 0; }
+        #home .sec_wr #flip .flip_item:nth-child(1) {
+          transform: translateZ(25px);
+          opacity: 1; }
+        #home .sec_wr #flip .flip_item:nth-child(2) {
+          transform: rotateX(270deg) translateY(-25px);
+          transform-origin: top; }
+        #home .sec_wr #flip .flip_item:nth-child(3) {
+          transform: translateZ(-25px) rotateX(180deg); }
+        #home .sec_wr #flip .flip_item:nth-child(4) {
+          transform: rotateX(-270deg) translateY(25px);
+          transform-origin: bottom; }
+@keyframes rotate {
+  100% {
+    transform: rotateX(360deg); } }
+    #home .sec_wr span {
+      display: block;
+      font-size: 0.7em;
+      font-family: "NEXON Lv2 Gothic Bold", sans-serif; }
 
 /* body 끝 */
 /* footer */

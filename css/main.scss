@@ -60,7 +60,7 @@ header {
         @keyframes shake {0%, 100% {transform:translateX(0)} 50% {transform:translateX(150px)}}
         
         .flow_item {
-            font-size: 2.4em; font-family: $fontB; color: $color_point; position: absolute; top: -10%; z-index: 8; cursor: default; opacity: 0.2;
+            font-size: 4vw; font-family: $fontB; color: $color_point; position: absolute; top: -10%; cursor: default; opacity: 0.1;
             -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;
             -webkit-animation-name: flow, shake;  animation-name: flow, shake;
             -webkit-animation-duration: 10s, 3s; animation-duration: 10s, 3s;
@@ -89,7 +89,26 @@ header {
 
     }
     .sec_wr {
-        
+        position: absolute; width: 100%; top: 30%; font-size: 2em; line-height: 1.6;
+        -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;
+        perspective: 1000px; -webkit-perspective: 1000px; perspective-origin: 50%; -webkit-perspective-origin: 50%; 
+        #flip {
+            position: relative; width: 100%; height: 100px; z-index: 3; transition: .2s;
+            transform-style: preserve-3d; 
+            // animation: rotate 4s linear infinite;
+            .flip_item {
+                position: absolute; width: 100%; top: 25%; left: 0; backface-visibility: hidden; background: transparent; 
+                font-size: 1.5em; transition: .2s; line-height: 1; opacity: 0;
+                &:nth-child(1) {transform: translateZ(25px); opacity: 1;}
+                &:nth-child(2) {transform: rotateX(270deg) translateY(-25px); transform-origin: top;}
+                &:nth-child(3) {transform: translateZ(-25px) rotateX(180deg);}
+                &:nth-child(4) {transform: rotateX(-270deg) translateY(25px); transform-origin: bottom; }
+            }
+            @keyframes rotate {
+                100% {transform: rotateX(360deg)}
+            }
+        }
+        span {display: block; font-size: 0.7em; font-family: $fontB; }
     }
 }
 /* body 끝 */
