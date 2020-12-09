@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* _head.scss */
+
+/* header */
+header {
+    $poa : absolute;
+    $mark_box_h : 50px;
+    $mark_box_t : 12.5px;
+    $mark_box_w : $mark_box_t + $mark_box_h;
+    $header_width : 20% !global;
+    position: fixed; width: $header_width; height: 100vh; left: 100%; top: 0;
+    z-index: 99;
+    #mark {
+        position: $poa; top: 30%; left: -$mark_box_w; width: $mark_box_w; height: $mark_box_h; cursor: pointer;
+        .bars {
+            height: 4px; background: $color_back; display: block; border-radius: 10px; transition: width .3s; margin-bottom: 9px; width: 100%;
+            &:nth-child(1) {width: 75%;}
+            &:nth-child(2) {width: 50%;}
+            &:nth-child(3) {width: 60%; margin-bottom: 0;}
+        }
+        .box {
+            position: absolute; right: 0; top: 0; width: $mark_box_h; height: $mark_box_h; background: $color_point; box-sizing: border-box; padding: 10px; z-index: 3;
+        }
+        .tail{
+            width: $mark_box_t; height: $mark_box_t;border-width: $mark_box_t * 2; border-style: solid; position: $poa; left: -$mark_box_t; top: 0; box-sizing: border-box;
+            &.up {border-color: $color_point $color_point transparent transparent;}
+            &.down { border-color: transparent $color_point $color_point transparent;}
+        }
+        &:hover, &.open {
+            .bars {width: 100%;}
+        }
+    }
+}
+#hd {
+    width: 100%; background: $color_point; height: 100%;
+    .hd1li {
+        padding: 15px 15%; font-size: 1.3em;
+        $hover_time : 0.24s;
+        a {font-family: $fontB; color: $color_back; display: inline-block; width: 100%; line-height: 2; transition: color $hover_time; text-transform: uppercase; position: relative;}
+        a::after {content:''; width: 0%; position: absolute; top: 100%; left: 0; height: 2px; border-radius: 10px; background: $color_text; transition: width $hover_time;}
+        &:hover, &.active a {color: $color_text;}
+        &.active a::after {width: 70%; }
+    }
+    p{
+        color: $color_back; font-family: $fontB;
+        &:first-child {margin-bottom: 30%; padding: 40px 15% 0; font-size: 1.3em;}
+        &:last-child {font-size: 0.83em; position: absolute; bottom: 40px; left: 10%; padding: 0;}
+    }
+}
+/* header 끝 */

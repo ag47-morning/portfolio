@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* _home.scss */
+
+#home {
+    @include section-option(100%);
+    text-align: center;
+    overflow: hidden;
+    .flow_wr {
+        @include poa(absolute, 100%, 100%, 0, 1) {
+            left: 0; 
+            border-bottom: 60px solid $color_point;
+            box-sizing: border-box;
+        }
+        @-webkit-keyframes flow {0% {top:-10%} 100% {top: 110%;}};
+        @keyframes flow {0% {top: -10%;} 100% { top : 110%;}}
+        @-webkit-keyframes shake {0%, 100% {transform:translateX(0)} 50% {transform: translateX(150px);}}
+        @keyframes shake {0%, 100% {transform:translateX(0)} 50% {transform:translateX(150px)}}
+        .flow_item {
+            @include no-drag;
+            @include header-color($color_point);
+            font-size: 4vw;
+            position: absolute; 
+            top: -10%;
+            cursor: default;
+            opacity: 0.1;
+            @include home-anim {
+                &:nth-child(1) {left: -5%; -webkit-animation-delay: 0s, 0s; animation-delay: 0s, 0s;}
+                &:nth-child(2) {left: 15%; -webkit-animation-delay: 1s, 1s; animation-delay: 1s, 1s;}
+                &:nth-child(3) {left: 30%; -webkit-animation-delay: 2s, 2s; animation-delay: 2s, 2s;}
+                &:nth-child(4) {left: 15%; -webkit-animation-delay: 3s, 1s; animation-delay: 3s, 2s;}
+                &:nth-child(5) {left: 40%; -webkit-animation-delay: 4s, 2s; animation-delay: 4s, 2s;}
+                &:nth-child(6) {left: 60%; -webkit-animation-delay: 3s, 8s; animation-delay: 3s, 8s;}
+                &:nth-child(7) {left: 60%; -webkit-animation-delay: 1s, 1s; animation-delay: 1s, 1s;}
+                &:nth-child(8) {left: 85%; -webkit-animation-delay: 2s, 8s; animation-delay: 2s, 8s;}
+                &:nth-child(9) {left: 75%; -webkit-animation-delay: 0s, 2s; animation-delay: 0s, 2s;}
+                &:nth-child(10) {left: 10%; -webkit-animation-delay: 4s, 3s; animation-delay: 4s, 3s;}
+                &:nth-child(11) {left: 70%; -webkit-animation-delay: 8s, 2s; animation-delay: 8s, 2s;}
+                &:nth-child(12) {left: 85%; -webkit-animation-delay: 7s, 1s; animation-delay: 7s, 1s;}
+                &:nth-child(13) {left: 50%; -webkit-animation-delay: 6s, 4s; animation-delay: 6s, 4s;}
+                &:nth-child(14) {left: 80%; -webkit-animation-delay: 4.5s, 1s; animation-delay: 4.5s, 1s;}
+                &:nth-child(15) {left: 30%; -webkit-animation-delay: 5.5s, 2s; animation-delay: 5.5s, 2s;}
+                &:nth-child(16) {left: 40%; -webkit-animation-delay: 8s, 4s; animation-delay: 8s, 4s;}
+                &:nth-child(17) {left: 10%; -webkit-animation-delay: 9s, 1.5s; animation-delay: 9s, 1.5s;}
+                &:nth-child(18) {left: 1%; -webkit-animation-delay: 6s, 2s; animation-delay: 6s, 2s;}
+            }
+
+        }
+    }
+    .sec_wr {
+        @include no-drag;
+        @include text-3d;
+        position: absolute; 
+        width: 100%;
+        top: 30%;
+        font-size: 2em;
+        line-height: 1.6;
+        #flip {
+            @include por(100%);
+            height: 100px;
+            z-index: 3;
+            transform-style: preserve-3d;
+            .flip_item {
+                position: absolute;
+                width: 100%;
+                top: 25%;
+                left: 0;
+                font-size: 1.5em;
+                line-height: 1;
+                &:nth-child(1) {transform: translateZ(25px); opacity: 1;}
+                &:nth-child(2) {transform: rotateX(270deg) translateY(-25px); transform-origin: top;}
+                &:nth-child(3) {transform: translateZ(-25px) rotateX(180deg);}
+                &:nth-child(4) {transform: rotateX(-270deg) translateY(25px); transform-origin: bottom; }
+            }
+        }
+        span {
+            display: block;
+            font-size: 0.7em;
+            @include header-color();
+        }
+    }
+}

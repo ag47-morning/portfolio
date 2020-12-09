@@ -1,0 +1,114 @@
+@charset "utf-8";
+/* _mixin.scss */
+
+@mixin respond($media) {
+    @if $media == $pc_width {
+        @media screen and (min-width:$pc_width) { @content; }    
+    }
+    @else if $media == $default_width {
+        @media screen and (max-width:$pc_width) { @content; }
+    }
+}
+
+@mixin poa(
+    $position:absolute,
+    $width:$default_width, 
+    $height:100vh, 
+    $top:0,
+    $zindex:1
+) {
+    position: $position;
+    width: if(unitless($width), #{$width}px, $width);
+    height: if(unitless($height), #{$height}px, $height);
+    top: if(unitless($top), #{$top}px, $top);
+    z-index: $zindex;
+    @content;
+}
+
+@mixin por($width) {
+    position: relative;
+    width: if(unitless($width), #{$width}px, $width);
+}
+
+@mixin sound_only() {position: absolute; margin: 0; padding: 0; line-height: 0; font-size: 0; text-indent: -9999em; overflow: hidden;}
+
+@mixin head-width {
+    @media screen and (min-width: $pc_width) {
+        width: 20%;
+    }
+    @media screen and (max-width: $pc_width) {
+        width: 50%;
+    }
+}
+
+@mixin section-option($width) {
+    @include respond($pc_width) {width: $width;}
+    @include respond($default_width) {width: 100%;}
+    position: relative;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 5vh 0;
+    &:after {
+        content:'';
+        display: block; 
+        visibility: hidden; 
+        clear: both;
+    }
+    @content;
+}
+
+@mixin bars($width, $height, $background, $bdrs) {
+    width: if(unitless($width), #{$width}px, $width);
+    height: if(unitless($height), #{$height}px, $height);
+    background: $background;
+    border-radius: if(unitless($bdrs), #{$bdrs}px, $bdrs);
+    @content;
+}
+
+@mixin header-color($color:$color_text) {
+    font-family: $fontB;
+    color: $color;
+}
+
+@mixin no-drag {
+    -webkit-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select:none; 
+    user-select:none;
+}
+
+@mixin home-anim {
+    -webkit-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -webkit-animation-name: flow, shake;  
+    animation-name: flow, shake;
+    -webkit-animation-duration: 10s, 3s; 
+    animation-duration: 10s, 3s;
+    -webkit-animation-timing-function:linear,ease-in-out;
+    animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count:infinite,infinite; 
+    animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state:running,running; 
+    animation-play-state: running, running;
+    @content;
+}
+
+@mixin text-3d {
+    perspective: 1000px; 
+    -webkit-perspective: 1000px; 
+    perspective-origin: 50%; 
+    -webkit-perspective-origin: 50%; 
+    #flip {
+        transition: $hover_time;
+        transform-style: preserve-3d;
+        .flip_item {
+            backface-visibility: hidden;
+            background: transparent;
+            transition: $hover_time;
+            opacity: 0;
+            
+        }
+    }
+}

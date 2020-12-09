@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* _header.scss */
+
+header {
+    @include poa(fixed, 300, 100vh, 0, 99) {
+        left: 100%;
+        @include head-width;
+    }
+    #mark {
+        @include poa(absolute, $mark_box_w, $mark_box_h, 30%, 1){
+            left: -$mark_box_w;
+            cursor: pointer;
+            @include respond($default_width) {top: 15%;}
+        };
+        .box {
+            @include poa(absolute, $mark_box_h, $mark_box_h, 0, 3){
+                box-sizing: border-box;
+                padding: 10px;
+                background: $color_point;
+                right: 0;
+            }
+        }
+        .tail {
+            @include poa(absolute, $mark_box_t, $mark_box_t, 0, 1){
+                left: -$mark_box_t;
+                box-sizing: border-box;
+                border-width: $mark_box_t * 2;
+                border-style: solid;
+            }
+            &.up {border-color: $color_point $color_point transparent transparent;}
+            &.down { border-color: transparent $color_point $color_point transparent;}
+        }
+        .bars {
+            @include bars(50%, 4, $color_back, 10){
+                transition: width $hover_time;
+                display: block;
+                margin-bottom: 9px;
+                &:nth-child(1) {width: 75%;}
+                &:nth-child(2) {width: 50%;}
+                &:nth-child(3) {width: 60%; margin-bottom: 0;}
+            };
+        }
+        &:hover, &.open {
+            .bars {width: 100%;}
+        }
+    }
+}
+
+#hd {
+    @include por(100%);
+    background: $color_point;
+    height: 100%;
+    .hd1li {
+        padding: 15px 15%;
+        font-size: 1.3em;
+        a {
+            @include por(100%);
+            @include header-color($color_back);
+            display: inline-block;
+            line-height: 2;
+            transition: color $hover_time;
+            text-transform: uppercase;
+            &::after {
+                content:'';
+                @include poa(absolute, 0, 0, 100%, 1) {
+                    left: 0;
+                    @include bars(0%, 2, $color_text, 10) {
+                        transition: width $hover_time;
+                    }
+                }
+            }
+        }
+        &:hover, &.active a {color: $color_text;}
+        &.active a::after {width: 70%;}
+    }
+    p {
+        @include header-color($color_back);
+        &:first-child {
+            margin-bottom: 30%;
+            padding: 40px 15% 0;
+            font-size: 1.3em;
+        }
+        &:last-child {
+            font-size: 0.83em;
+            position: absolute;
+            bottom: 40px;
+            left: 10%; padding: 0;
+        }
+    }
+}
