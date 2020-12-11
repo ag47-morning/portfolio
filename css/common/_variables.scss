@@ -4,6 +4,7 @@
 /* global { */
 $default_width : 100%;
 $pc_width : 1000px;
+$mobile_width : 500px;
 /* } global */
 
 /* head { */
@@ -14,5 +15,6 @@ $hover_time : 0.24s;
 /* } head */
 
 /* #home { */
+$flip_height : 50px;
 
 /* } #home */

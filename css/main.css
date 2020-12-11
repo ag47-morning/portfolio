@@ -28,7 +28,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  font-size: 0.94em;
+  font-size: 0.98em;
   /* body font size */
   background: #fff;
   /* body background */ }
@@ -249,14 +249,18 @@ header {
   height: 100vh;
   margin: 0 auto;
   padding: 5vh 0;
+  width: 1000px;
+  width: 100%;
   text-align: center;
   overflow: hidden; }
-  @media screen and (min-width: 1000px) {
-    #home {
-      width: 100%; } }
   @media screen and (max-width: 1000px) {
     #home {
-      width: 100%; } }
+      width: 100%;
+      padding: 5vh 10px; } }
+  @media screen and (max-width: 500px) {
+    #home {
+      width: 100%;
+      padding: 5vh 10px; } }
   #home:after {
     content: '';
     display: block;
@@ -394,51 +398,106 @@ header {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    perspective: 1000px;
-    -webkit-perspective: 1000px;
-    perspective-origin: 50%;
-    -webkit-perspective-origin: 50%;
     position: absolute;
     width: 100%;
-    top: 30%;
+    top: 45%;
+    transform: translateY(-50%);
     font-size: 2em;
     line-height: 1.6; }
-    #home .sec_wr #flip {
-      transition: 0.24s;
-      transform-style: preserve-3d; }
-      #home .sec_wr #flip .flip_item {
-        backface-visibility: hidden;
-        background: transparent;
-        transition: 0.24s;
-        opacity: 0; }
-    #home .sec_wr #flip {
-      position: relative;
+    #home .sec_wr .flip_wr {
       width: 100%;
-      height: 100px;
-      z-index: 3;
-      transform-style: preserve-3d; }
-      #home .sec_wr #flip .flip_item {
-        position: absolute;
+      height: 60px;
+      perspective: 1000px;
+      -webkit-perspective: 1000px;
+      perspective-origin: 50%;
+      -webkit-perspective-origin: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      line-height: 1; }
+      #home .sec_wr .flip_wr #flip {
+        transition: 0.24s;
+        transform-style: preserve-3d;
+        position: relative;
         width: 100%;
-        top: 25%;
-        left: 0;
-        font-size: 1.5em;
-        line-height: 1; }
-        #home .sec_wr #flip .flip_item:nth-child(1) {
-          transform: translateZ(25px);
+        z-index: 9; }
+        #home .sec_wr .flip_wr #flip .flip_item {
+          backface-visibility: hidden;
+          background: transparent;
+          transition: 0.24s;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          font-size: 1.5em; }
+    #home .sec_wr #flip {
+      width: 90%;
+      height: 30px; }
+      #home .sec_wr #flip .flip_item {
+        width: 100%; }
+        #home .sec_wr #flip .flip_item.front {
+          transform: translateZ(15px);
           opacity: 1; }
-        #home .sec_wr #flip .flip_item:nth-child(2) {
-          transform: rotateX(270deg) translateY(-25px);
-          transform-origin: top; }
-        #home .sec_wr #flip .flip_item:nth-child(3) {
-          transform: translateZ(-25px) rotateX(180deg); }
-        #home .sec_wr #flip .flip_item:nth-child(4) {
-          transform: rotateX(-270deg) translateY(25px);
-          transform-origin: bottom; }
+        #home .sec_wr #flip .flip_item.back {
+          transform: translateZ(-15px) rotateX(180deg); }
+        #home .sec_wr #flip .flip_item.top {
+          transform: rotateX(270deg) translateY(-15px);
+          transform-origin: center top; }
+        #home .sec_wr #flip .flip_item.bottom {
+          transform: rotateX(-270deg) translateY(15px);
+          transform-origin: center bottom; }
+@keyframes rotate {
+  100% {
+    transform: rotateX(360deg); } }
     #home .sec_wr span {
       display: block;
       font-size: 0.7em;
       font-family: "NEXON Lv2 Gothic Bold", sans-serif;
       color: #002118; }
+    @media screen and (max-width: 1000px) {
+      #home .sec_wr {
+        font-size: 5vw; } }
+
+/* _about.scss */
+section {
+  position: relative;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 5vh 0;
+  width: 1000px; }
+  @media screen and (max-width: 1000px) {
+    section {
+      width: 100%;
+      padding: 5vh 10px; } }
+  @media screen and (max-width: 500px) {
+    section {
+      width: 100%;
+      padding: 5vh 10px; } }
+  section:after {
+    content: '';
+    display: block;
+    visibility: hidden;
+    clear: both; }
+  section .sec_wr {
+    width: 100%; }
+  section .sec_hd {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center; }
+    section .sec_hd h1 {
+      font-size: 2.5em; }
+      @media screen and (max-width: 500px) {
+        section .sec_hd h1 {
+          font-size: 10vw; } }
+    section .sec_hd div {
+      flex-basis: 50%;
+      flex-grow: 2;
+      height: 2px;
+      margin: 0 15px;
+      background: #eee; }
 
 /*# sourceMappingURL=main.css.map */

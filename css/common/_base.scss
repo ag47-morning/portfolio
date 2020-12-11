@@ -14,6 +14,7 @@ $color_back : #fff;
 $color_point : #00ffbc;
 $color_text : #002118;
 $color_hover : rgba(0,255,188,0.4);
+$color_line : #eee;
 
 html{overflow-y: scroll;}
 html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -25,7 +26,7 @@ body {
     margin: 0; 
     padding: 0; 
     overflow: hidden; 
-    font-size: 0.94em; /* body font size */
+    font-size: 0.98em; /* body font size */
     background: $color_back; /* body background */
 } 
 h1, h2, h3, h4, h5, h6 {

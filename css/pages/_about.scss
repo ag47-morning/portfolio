@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* _about.scss */
+
+section{
+    @include section-option;
+    .sec_wr {width: 100%;}
+    .sec_hd {
+        @include section-head;
+    }
+}
+

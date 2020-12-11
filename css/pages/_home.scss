@@ -2,7 +2,7 @@
 /* _home.scss */
 
 #home {
-    @include section-option(100%);
+    @include section-option {width: 100%;};
     text-align: center;
     overflow: hidden;
     .flow_wr {
@@ -48,34 +48,42 @@
     }
     .sec_wr {
         @include no-drag;
-        @include text-3d;
         position: absolute; 
         width: 100%;
-        top: 30%;
+        top: 45%;
+        transform: translateY(-50%);
         font-size: 2em;
         line-height: 1.6;
-        #flip {
-            @include por(100%);
-            height: 100px;
-            z-index: 3;
-            transform-style: preserve-3d;
+        @include respond($mobile_width) {$flip_height : 30px !global;}
+        .flip_wr {
+            width: 100%;
+            height: $flip_height*2;
+            @include text-3d;
+            line-height: 1;
+        }
+        #flip { 
+            width: 90%;
+            height: $flip_height;
+            // animation: rotate 4s infinite linear;
             .flip_item {
-                position: absolute;
                 width: 100%;
-                top: 25%;
-                left: 0;
-                font-size: 1.5em;
-                line-height: 1;
-                &:nth-child(1) {transform: translateZ(25px); opacity: 1;}
-                &:nth-child(2) {transform: rotateX(270deg) translateY(-25px); transform-origin: top;}
-                &:nth-child(3) {transform: translateZ(-25px) rotateX(180deg);}
-                &:nth-child(4) {transform: rotateX(-270deg) translateY(25px); transform-origin: bottom; }
+                // height: 50px;
+                &.front {transform: translateZ($flip_height/2); opacity: 1;}
+                &.back {transform: translateZ(-($flip_height/2)) rotateX(180deg);}
+                &.top {transform: rotateX(270deg) translateY(-($flip_height/2)); transform-origin: center top;}
+                &.bottom {transform: rotateX(-270deg) translateY($flip_height/2); transform-origin: center bottom;}
             }
+        }
+        @keyframes rotate {
+            100% {transform: rotateX(360deg)}
         }
         span {
             display: block;
             font-size: 0.7em;
             @include header-color();
+        }
+        @include respond($default_width) {
+            font-size: 5vw;
         }
     }
 }
