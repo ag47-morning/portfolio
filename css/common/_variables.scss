@@ -9,12 +9,15 @@ $mobile_width : 500px;
 
 /* head { */
 $mark_box_h : 50px;
-$mark_box_t : 12.5px;
+$mark_box_t : $mark_box_h/4;
 $mark_box_w : $mark_box_t + $mark_box_h;
 $hover_time : 0.24s;
+$mark_box_h_m : $mark_box_h * 0.8;
+$mark_box_t_m : $mark_box_h_m/4;
+$mark_box_w_m : $mark_box_t_m + $mark_box_h_m;
 /* } head */
 
 /* #home { */
 $flip_height : 50px;
-
+$flip_height_m : $flip_height * 0.8;
 /* } #home */

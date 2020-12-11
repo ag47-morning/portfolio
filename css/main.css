@@ -141,6 +141,9 @@ header {
       width: 20%; } }
   @media screen and (max-width: 1000px) {
     header {
+      width: 35%; } }
+  @media screen and (max-width: 500px) {
+    header {
       width: 50%; } }
   header #mark {
     position: absolute;
@@ -152,7 +155,15 @@ header {
     cursor: pointer; }
     @media screen and (max-width: 1000px) {
       header #mark {
-        top: 15%; } }
+        top: 5%; } }
+    @media screen and (max-width: 500px) {
+      header #mark {
+        position: absolute;
+        width: 50px;
+        height: 40px;
+        top: 5%;
+        z-index: 1;
+        left: -50px; } }
     header #mark .box {
       position: absolute;
       width: 50px;
@@ -163,6 +174,13 @@ header {
       padding: 10px;
       background: #00ffbc;
       right: 0; }
+      @media screen and (max-width: 500px) {
+        header #mark .box {
+          position: absolute;
+          width: 40px;
+          height: 40px;
+          top: 0px;
+          z-index: 3; } }
     header #mark .tail {
       position: absolute;
       width: 12.5px;
@@ -173,12 +191,21 @@ header {
       box-sizing: border-box;
       border-width: 25px;
       border-style: solid; }
+      @media screen and (max-width: 500px) {
+        header #mark .tail {
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          top: 0px;
+          z-index: 1;
+          left: -10px;
+          border-width: 20px; } }
       header #mark .tail.up {
         border-color: #00ffbc #00ffbc transparent transparent; }
       header #mark .tail.down {
         border-color: transparent #00ffbc #00ffbc transparent; }
     header #mark .bars {
-      width: 50%;
+      width: 100%;
       height: 4px;
       background: #fff;
       border-radius: 10px;
@@ -192,6 +219,12 @@ header {
       header #mark .bars:nth-child(3) {
         width: 60%;
         margin-bottom: 0; }
+      @media screen and (max-width: 500px) {
+        header #mark .bars {
+          height: 3px;
+          margin-bottom: 6px; }
+          header #mark .bars:nth-child(1), header #mark .bars:nth-child(2), header #mark .bars:nth-child(3) {
+            width: 100%; } }
     header #mark:hover .bars, header #mark.open .bars {
       width: 100%; }
 
@@ -203,6 +236,10 @@ header {
   #hd .hd1li {
     padding: 15px 15%;
     font-size: 1.3em; }
+    @media screen and (max-width: 500px) {
+      #hd .hd1li {
+        font-size: 1.1em;
+        padding: 8px 15%; } }
     #hd .hd1li a {
       position: relative;
       width: 100%;
@@ -229,6 +266,9 @@ header {
       color: #002118; }
     #hd .hd1li.active a::after {
       width: 70%; }
+    @media screen and (max-width: 500px) {
+      #hd .hd1li.active a::after {
+        width: 90%; } }
   #hd p {
     font-family: "NEXON Lv2 Gothic Bold", sans-serif;
     color: #fff; }
@@ -242,6 +282,9 @@ header {
       bottom: 40px;
       left: 10%;
       padding: 0; }
+      @media screen and (max-width: 500px) {
+        #hd p:last-child {
+          bottom: 20px; } }
 
 /* _home.scss */
 #home {
@@ -406,7 +449,7 @@ header {
     line-height: 1.6; }
     #home .sec_wr .flip_wr {
       width: 100%;
-      height: 60px;
+      height: 100px;
       perspective: 1000px;
       -webkit-perspective: 1000px;
       perspective-origin: 50%;
@@ -416,6 +459,9 @@ header {
       align-items: center;
       background: transparent;
       line-height: 1; }
+      @media screen and (max-width: 500px) {
+        #home .sec_wr .flip_wr {
+          height: 80px; } }
       #home .sec_wr .flip_wr #flip {
         transition: 0.24s;
         transform-style: preserve-3d;
@@ -435,20 +481,32 @@ header {
           font-size: 1.5em; }
     #home .sec_wr #flip {
       width: 90%;
-      height: 30px; }
+      height: 50px; }
+      @media screen and (max-width: 500px) {
+        #home .sec_wr #flip {
+          height: 40px; } }
       #home .sec_wr #flip .flip_item {
         width: 100%; }
         #home .sec_wr #flip .flip_item.front {
-          transform: translateZ(15px);
+          transform: translateZ(25px);
           opacity: 1; }
         #home .sec_wr #flip .flip_item.back {
-          transform: translateZ(-15px) rotateX(180deg); }
+          transform: translateZ(-25px) rotateX(180deg); }
         #home .sec_wr #flip .flip_item.top {
-          transform: rotateX(270deg) translateY(-15px);
+          transform: rotateX(270deg) translateY(-25px);
           transform-origin: center top; }
         #home .sec_wr #flip .flip_item.bottom {
-          transform: rotateX(-270deg) translateY(15px);
+          transform: rotateX(-270deg) translateY(25px);
           transform-origin: center bottom; }
+        @media screen and (max-width: 500px) {
+          #home .sec_wr #flip .flip_item.front {
+            transform: translateZ(20px); }
+          #home .sec_wr #flip .flip_item.back {
+            transform: translateZ(-20px) rotateX(180deg); }
+          #home .sec_wr #flip .flip_item.top {
+            transform: rotateX(270deg) translateY(-20px); }
+          #home .sec_wr #flip .flip_item.bottom {
+            transform: rotateX(-270deg) translateY(20px); } }
 @keyframes rotate {
   100% {
     transform: rotateX(360deg); } }

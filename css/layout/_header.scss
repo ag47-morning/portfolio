@@ -10,7 +10,10 @@ header {
         @include poa(absolute, $mark_box_w, $mark_box_h, 30%, 1){
             left: -$mark_box_w;
             cursor: pointer;
-            @include respond($default_width) {top: 15%;}
+            @include respond($default_width) {top: 5%;}
+            @include respond($mobile_width) {
+                @include poa (absolute, $mark_box_w_m, $mark_box_h_m,5%,1) {left: -$mark_box_w_m;}
+            }
         };
         .box {
             @include poa(absolute, $mark_box_h, $mark_box_h, 0, 3){
@@ -18,6 +21,9 @@ header {
                 padding: 10px;
                 background: $color_point;
                 right: 0;
+                @include respond($mobile_width) {
+                    @include poa (absolute, $mark_box_h_m, $mark_box_h_m,0,3);
+                }
             }
         }
         .tail {
@@ -26,18 +32,29 @@ header {
                 box-sizing: border-box;
                 border-width: $mark_box_t * 2;
                 border-style: solid;
+                @include respond($mobile_width) {
+                    @include poa (absolute, $mark_box_t_m, $mark_box_t_m,0,1) {
+                        left: -$mark_box_t_m;
+                        border-width: $mark_box_t_m * 2;
+                    }
+                }
             }
             &.up {border-color: $color_point $color_point transparent transparent;}
             &.down { border-color: transparent $color_point $color_point transparent;}
         }
         .bars {
-            @include bars(50%, 4, $color_back, 10){
+            @include bars(100%, 4, $color_back, 10){
                 transition: width $hover_time;
                 display: block;
                 margin-bottom: 9px;
                 &:nth-child(1) {width: 75%;}
                 &:nth-child(2) {width: 50%;}
                 &:nth-child(3) {width: 60%; margin-bottom: 0;}
+                @include respond($mobile_width) {
+                    height: 3px;
+                    margin-bottom: 6px;
+                    &:nth-child(1), &:nth-child(2), &:nth-child(3) {width: 100%;}
+                }
             };
         }
         &:hover, &.open {
@@ -53,6 +70,10 @@ header {
     .hd1li {
         padding: 15px 15%;
         font-size: 1.3em;
+        @include respond($mobile_width) {
+            font-size: 1.1em;
+            padding: 8px 15%;
+        }
         a {
             @include por(100%);
             @include header-color($color_back);
@@ -72,6 +93,9 @@ header {
         }
         &:hover, &.active a {color: $color_text;}
         &.active a::after {width: 70%;}
+        @include respond($mobile_width) {
+            &.active a::after {width: 90%;}
+        }
     }
     p {
         @include header-color($color_back);
@@ -85,6 +109,9 @@ header {
             position: absolute;
             bottom: 40px;
             left: 10%; padding: 0;
+            @include respond($mobile_width) {
+                bottom: 20px;
+            }
         }
     }
 }

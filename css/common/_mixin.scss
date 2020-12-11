@@ -37,6 +37,9 @@
         width: 20%;
     }
     @media screen and (max-width: $pc_width) {
+        width: 35%;
+    }
+    @media screen and (max-width: $mobile_width) {
         width: 50%;
     }
 }
