@@ -51,20 +51,21 @@
         position: absolute; 
         width: 100%;
         top: 45%;
+        left: 0;
         transform: translateY(-50%);
         font-size: 2em;
         line-height: 1.6;
         .flip_wr {
             width: 100%;
             height: $flip_height*2;
-            @include respond($mobile_width) {height: $flip_height_m*2;}
+            @include respond($min_width) {height: $flip_height_m*2;}
             @include text-3d;
             line-height: 1;
         }
         #flip { 
             width: 90%;
             height: $flip_height;
-            @include respond($mobile_width) {height: $flip_height_m;}
+            @include respond($min_width) {height: $flip_height_m;}
             // animation: rotate 4s infinite linear;
             .flip_item {
                 width: 100%;
@@ -73,7 +74,7 @@
                 &.back {transform: translateZ(-($flip_height/2)) rotateX(180deg);}
                 &.top {transform: rotateX(270deg) translateY(-($flip_height/2)); transform-origin: center top;}
                 &.bottom {transform: rotateX(-270deg) translateY($flip_height/2); transform-origin: center bottom;}
-                @include respond($mobile_width) {
+                @include respond($min_width) {
                     &.front {transform: translateZ($flip_height_m/2);}
                     &.back {transform: translateZ(-($flip_height_m/2)) rotateX(180deg);}
                     &.top {transform: rotateX(270deg) translateY(-($flip_height_m/2));}

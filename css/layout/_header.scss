@@ -11,7 +11,7 @@ header {
             left: -$mark_box_w;
             cursor: pointer;
             @include respond($default_width) {top: 5%;}
-            @include respond($mobile_width) {
+            @include respond($min_width) {
                 @include poa (absolute, $mark_box_w_m, $mark_box_h_m,5%,1) {left: -$mark_box_w_m;}
             }
         };
@@ -21,7 +21,7 @@ header {
                 padding: 10px;
                 background: $color_point;
                 right: 0;
-                @include respond($mobile_width) {
+                @include respond($min_width) {
                     @include poa (absolute, $mark_box_h_m, $mark_box_h_m,0,3);
                 }
             }
@@ -32,7 +32,7 @@ header {
                 box-sizing: border-box;
                 border-width: $mark_box_t * 2;
                 border-style: solid;
-                @include respond($mobile_width) {
+                @include respond($min_width) {
                     @include poa (absolute, $mark_box_t_m, $mark_box_t_m,0,1) {
                         left: -$mark_box_t_m;
                         border-width: $mark_box_t_m * 2;
@@ -50,7 +50,7 @@ header {
                 &:nth-child(1) {width: 75%;}
                 &:nth-child(2) {width: 50%;}
                 &:nth-child(3) {width: 60%; margin-bottom: 0;}
-                @include respond($mobile_width) {
+                @include respond($min_width) {
                     height: 3px;
                     margin-bottom: 6px;
                     &:nth-child(1), &:nth-child(2), &:nth-child(3) {width: 100%;}
@@ -70,7 +70,7 @@ header {
     .hd1li {
         padding: 15px 15%;
         font-size: 1.3em;
-        @include respond($mobile_width) {
+        @include respond($min_width) {
             font-size: 1.1em;
             padding: 8px 15%;
         }
@@ -93,7 +93,7 @@ header {
         }
         &:hover, &.active a {color: $color_text;}
         &.active a::after {width: 70%;}
-        @include respond($mobile_width) {
+        @include respond($min_width) {
             &.active a::after {width: 90%;}
         }
     }
@@ -109,7 +109,7 @@ header {
             position: absolute;
             bottom: 40px;
             left: 10%; padding: 0;
-            @include respond($mobile_width) {
+            @include respond($min_width) {
                 bottom: 20px;
             }
         }

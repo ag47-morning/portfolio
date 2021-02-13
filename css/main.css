@@ -138,13 +138,16 @@ header {
   left: 100%; }
   @media screen and (min-width: 1000px) {
     header {
-      width: 20%; } }
+      width: 30%; } }
   @media screen and (max-width: 1000px) {
     header {
       width: 35%; } }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 700px) {
     header {
       width: 50%; } }
+  @media screen and (max-width: 510px) {
+    header {
+      width: 70%; } }
   header #mark {
     position: absolute;
     width: 62.5px;
@@ -156,7 +159,7 @@ header {
     @media screen and (max-width: 1000px) {
       header #mark {
         top: 5%; } }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 700px) {
       header #mark {
         position: absolute;
         width: 50px;
@@ -174,7 +177,7 @@ header {
       padding: 10px;
       background: #00ffbc;
       right: 0; }
-      @media screen and (max-width: 500px) {
+      @media screen and (max-width: 700px) {
         header #mark .box {
           position: absolute;
           width: 40px;
@@ -191,7 +194,7 @@ header {
       box-sizing: border-box;
       border-width: 25px;
       border-style: solid; }
-      @media screen and (max-width: 500px) {
+      @media screen and (max-width: 700px) {
         header #mark .tail {
           position: absolute;
           width: 10px;
@@ -219,7 +222,7 @@ header {
       header #mark .bars:nth-child(3) {
         width: 60%;
         margin-bottom: 0; }
-      @media screen and (max-width: 500px) {
+      @media screen and (max-width: 700px) {
         header #mark .bars {
           height: 3px;
           margin-bottom: 6px; }
@@ -236,7 +239,7 @@ header {
   #hd .hd1li {
     padding: 15px 15%;
     font-size: 1.3em; }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 700px) {
       #hd .hd1li {
         font-size: 1.1em;
         padding: 8px 15%; } }
@@ -266,7 +269,7 @@ header {
       color: #002118; }
     #hd .hd1li.active a::after {
       width: 70%; }
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 700px) {
       #hd .hd1li.active a::after {
         width: 90%; } }
   #hd p {
@@ -282,7 +285,7 @@ header {
       bottom: 40px;
       left: 10%;
       padding: 0; }
-      @media screen and (max-width: 500px) {
+      @media screen and (max-width: 700px) {
         #hd p:last-child {
           bottom: 20px; } }
 
@@ -291,7 +294,7 @@ header {
   position: relative;
   height: 100vh;
   margin: 0 auto;
-  padding: 5vh 0;
+  padding: 5vh 5px;
   width: 1000px;
   width: 100%;
   text-align: center;
@@ -299,11 +302,11 @@ header {
   @media screen and (max-width: 1000px) {
     #home {
       width: 100%;
-      padding: 5vh 10px; } }
-  @media screen and (max-width: 500px) {
+      padding: 5vh 20px; } }
+  @media screen and (max-width: 700px) {
     #home {
       width: 100%;
-      padding: 5vh 10px; } }
+      padding: 5vh 20px; } }
   #home:after {
     content: '';
     display: block;
@@ -444,6 +447,7 @@ header {
     position: absolute;
     width: 100%;
     top: 45%;
+    left: 0;
     transform: translateY(-50%);
     font-size: 2em;
     line-height: 1.6; }
@@ -454,12 +458,16 @@ header {
       -webkit-perspective: 1000px;
       perspective-origin: 50%;
       -webkit-perspective-origin: 50%;
+      display: -webkit-flex;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
       display: flex;
       justify-content: center;
       align-items: center;
       background: transparent;
       line-height: 1; }
-      @media screen and (max-width: 500px) {
+      @media screen and (max-width: 700px) {
         #home .sec_wr .flip_wr {
           height: 80px; } }
       #home .sec_wr .flip_wr #flip {
@@ -482,7 +490,7 @@ header {
     #home .sec_wr #flip {
       width: 90%;
       height: 50px; }
-      @media screen and (max-width: 500px) {
+      @media screen and (max-width: 700px) {
         #home .sec_wr #flip {
           height: 40px; } }
       #home .sec_wr #flip .flip_item {
@@ -498,7 +506,7 @@ header {
         #home .sec_wr #flip .flip_item.bottom {
           transform: rotateX(-270deg) translateY(25px);
           transform-origin: center bottom; }
-        @media screen and (max-width: 500px) {
+        @media screen and (max-width: 700px) {
           #home .sec_wr #flip .flip_item.front {
             transform: translateZ(20px); }
           #home .sec_wr #flip .flip_item.back {
@@ -524,16 +532,16 @@ section {
   position: relative;
   height: 100vh;
   margin: 0 auto;
-  padding: 5vh 0;
+  padding: 5vh 5px;
   width: 1000px; }
   @media screen and (max-width: 1000px) {
     section {
       width: 100%;
-      padding: 5vh 10px; } }
-  @media screen and (max-width: 500px) {
+      padding: 5vh 20px; } }
+  @media screen and (max-width: 700px) {
     section {
       width: 100%;
-      padding: 5vh 10px; } }
+      padding: 5vh 20px; } }
   section:after {
     content: '';
     display: block;
@@ -544,18 +552,92 @@ section {
   section .sec_hd {
     width: 100%;
     position: relative;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-display: flexbox;
     align-items: center; }
     section .sec_hd h1 {
-      font-size: 2.5em; }
-      @media screen and (max-width: 500px) {
+      font-size: 2.5rem; }
+      @media screen and (max-width: 700px) {
         section .sec_hd h1 {
           font-size: 10vw; } }
+      @media screen and (max-width: 510px) {
+        section .sec_hd h1 {
+          font-size: 8vw; } }
     section .sec_hd div {
       flex-basis: 50%;
       flex-grow: 2;
       height: 2px;
       margin: 0 15px;
       background: #eee; }
+  section .sub_head {
+    font-family: "NEXON Lv2 Gothic Bold", sans-serif;
+    color: #00ffbc;
+    font-size: 1.4rem;
+    margin: 20px 0;
+    text-transform: uppercase; }
+    @media screen and (max-width: 510px) {
+      section .sub_head {
+        font-size: 1.3rem; } }
+  section .min {
+    font-size: 0.75em; }
+
+#about .profile_wr, #about .skill_wr {
+  margin: 10px 0; }
+#about .profile {
+  position: relative;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-display: flexbox;
+  align-items: center;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center; }
+#about .profile .profile_img {
+  width: 300px;
+  height: 400px;
+  background-image: url("http://placehold.it/300x400");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; }
+#about .profile .profile_text {
+  line-height: 1.5;
+  padding-left: 10px; }
+  #about .profile .profile_text .profile_name {
+    margin-bottom: 20px; }
+#about .career {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 100px auto;
+  gap: 10px; }
+  #about .career .career_year {
+    font-family: "NEXON Lv2 Gothic Bold", sans-serif;
+    border-right: 2px solid #eee; }
+  #about .career .career_year:nth-child(1) {
+    grid-row: 1/3;
+    align-self: center; }
+  #about .career .career_text {
+    padding-left: 30px; }
+@media screen and (max-width: 700px) {
+  #about > div {
+    flex-grow: 1; }
+  #about .profile .profile_img {
+    height: 300px; }
+  #about .career .career_text {
+    padding-left: 5px; } }
+@media screen and (max-width: 510px) {
+  #about .profile {
+    flex-wrap: wrap; }
+  #about .profile .profile_name {
+    text-align: center;
+    margin: 20px 0; }
+  #about .career {
+    margin: 40px 0; } }
 
 /*# sourceMappingURL=main.css.map */
