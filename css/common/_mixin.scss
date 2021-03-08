@@ -11,20 +11,23 @@
     @else if $media == $mobile_width {
         @media screen and (max-width:$mobile_width) { @content; }
     }
+    @else {
+        @media screen and (max-width:$media) {@content;}
+    }
 }
 
 @mixin poa(
-    $position:absolute,
-    $width:$default_width, 
-    $height:100vh, 
+    $width:100%, 
+    $height:100%, 
     $top:0,
-    $zindex:1
+    $zindex:1,
+    $position:absolute
 ) {
-    position: $position;
     width: if(unitless($width), #{$width}px, $width);
     height: if(unitless($height), #{$height}px, $height);
     top: if(unitless($top), #{$top}px, $top);
     z-index: $zindex;
+    position: $position;
     @content;
 }
 
@@ -52,7 +55,6 @@
 
 @mixin section-option {
     position: relative;
-    height: 100vh;
     margin: 0 auto;
     padding: 5vh 5px;
     width: $pc_width;
@@ -60,9 +62,9 @@
         width: 100%; 
         padding: 5vh 20px;
     }
-    @include respond($min_width) {
+    @include respond($mobile_width) {
         width: 100%; 
-        padding: 5vh 20px;
+        padding: 5vh 10px;
     }
     &:after {
         content:'';
@@ -160,7 +162,8 @@
     @include flex;
     h1 {
         font-size: 2.5rem;
-        @include respond($min_width) {font-size: 10vw;}
+        text-transform: uppercase;
+        @include respond($min_width) {font-size: 8vw;}
         @include respond($mobile_width) {font-size: 8vw;}
     }
     div {

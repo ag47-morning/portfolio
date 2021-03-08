@@ -80,16 +80,19 @@ $(document).ready(function(){
     var skill_cir = $(".skill_cir");
     // var skill_cir_desc = Number($("#about .skill_cir_desc").text().split('%')[0]);
     var skill_cir_desc = new Array();
+    var skill_cir_width = Number(skill_cir.css("width").split("px")[0])-5;
+    if (window.innerWidth <=700) {
+        skill_cir_width = Number(skill_cir.css("width").split("px")[0])-8;
+    }
     for (var zz = 0; zz < skill_item.length; zz++) {
         x = skill_item.eq(zz).text();
         skill_cir_desc.push(Number(x.split('%')[0]));
     }
     console.log(skill_cir_desc);
     for (var z = 0; z<skill_item.length; z++) {
-        skill_item.eq(z).find(".skill_cir_bak").css("border-bottom-width",(0.75*skill_cir_desc[z])+"px");
+        skill_item.eq(z).find(".skill_cir_bak").css("border-bottom-width",( (skill_cir_width/100)*skill_cir_desc[z] )+"px");
     }
 
     /////////// .skill effect finish  ///////////
-
 })
 

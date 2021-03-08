@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* _contact.scss */
+
+.con_wr {
+    margin: 40px 0;
+}
+.con_desc {
+    width: 70%;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 3;
+    padding: 40px;
+    border-radius: 5px;
+    border: 2px solid $color_line;
+    a{
+        display: block;
+        font-size: 1.5em;
+        font-family: $fontB;
+        text-transform: uppercase;
+        position: relative;
+        &::after{
+            content:'← click';
+            position: absolute;
+            right: 0;
+            font-size: 0.6em;
+            font-family: $fontR;
+            top: 10px;
+            opacity: 0;
+            transition: opacity .3s;
+            color: $color_point;
+        }
+        &:hover::after {opacity: 1;}
+        @include respond($mobile_width) {
+            &::after {opacity: 1;}
+            &:hover::after{font-family: $fontB;}
+        }
+    }
+    
+}

@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* _portfolio.scss */
+
+.port_wr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, auto));
+    column-gap: 30px;
+    row-gap: 30px;
+    grid-auto-rows: minmax(300px, auto);
+    @include respond($min_width) {
+        grid-template-columns: 1fr;
+    }
+    .project {
+        @include por(100%);
+        cursor: pointer;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: $color_line;
+        overflow: hidden;
+        .project_desc{
+            position: absolute;
+            width: 100%;
+            height: 0;
+            bottom: -20px;
+            background: $color_hover;
+            transition: height .3s;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        &:hover .project_desc {height: 45%;}
+    }
+}
+.project_desc {
+    .project_name {
+        font-size: 1.4rem;
+        font-family: $fontB;
+        margin-bottom: 15px;
+    }
+    .project_time, .project_per {
+        font-size: 1.1em; line-height: 1.5;
+        span {
+            font-size: 1.1em;
+            margin: 0 5px;
+        }
+    }
+}
+.popup_wr {
+    @include poa(60%, 80%, 50%, 91, fixed){
+        left: 50%;
+        transform: translate(-50%,-50%);
+        @include respond($default_width) {
+            width: 80%;
+        }
+    }
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 50px;
+    background: $color_text;
+    border-radius: 20px;
+    column-gap: 20px;
+    grid-auto-rows: minmax(200px, auto);
+    .pp_img a {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: $color_line;
+    }
+    .pp_desc{
+        .pp_name, .pp_de {
+            color: $color_back;
+            line-height: 1.8;
+            cursor: default;
+        }
+        .pp_link, .pp_git {
+            margin: 0 5px;
+            transition: color .3s;
+            color: $color_back;
+            font-family: $fontB;
+            &:hover {
+                color: $color_point;
+            }
+        }
+        .pp_time, .pp_per, .pp_lang {
+            color: $color_back;
+            margin: 0 5px;
+        }
+        h6 {
+            font-size: 1.4em; 
+            margin-bottom: 15px;
+        }
+        .pp_tm {margin-bottom: 15px;}
+    }
+    @include respond(850px) {
+        grid-template-columns: 1fr;
+        .pp_img {margin-bottom: 10px;}
+        .pp_tm {margin-bottom: 10px;}
+    }
+}

@@ -3,6 +3,7 @@
 
 section{
     @include section-option;
+    overflow: hidden;
     .sec_wr {width: 100%;}
     .sec_hd {
         @include section-head;
@@ -104,5 +105,18 @@ section{
     }
     @include respond($default_width) {
         .skill {flex-wrap: wrap;}
+    }
+    @include respond($min_width) {
+        .skill_item p {font-size: 0.9em;}
+        .skill_cir {
+            width: 75px;
+            height: 75px;
+        }
+    }
+    @include respond($mobile_width) {
+        .skill_cir {
+            width: 70px;
+            height: 70px;
+        }
     }
 }

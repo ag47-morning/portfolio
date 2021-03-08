@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* main.scss */
 /* _base.scss */
 @font-face {
   font-family: 'NEXON Lv2 Gothic';
@@ -38,7 +39,9 @@ h1, h2, h3, h4, h5, h6 {
   /* head font size */
   font-family: "NEXON Lv2 Gothic Bold", sans-serif;
   /* head font family */
-  font-weight: normal; }
+  font-weight: normal;
+  color: #002118;
+  /* text color */ }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
@@ -46,7 +49,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 ul, dl, dt, dd, ol {
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+  color: #002118;
+  /* text color */ }
 
 legend, .sound_only {
   position: absolute;
@@ -59,7 +64,9 @@ legend, .sound_only {
 
 label, input, button, select, img {
   vertical-align: middle;
-  font-size: 1.1em; }
+  font-size: 1.1em;
+  color: #002118;
+  /* text color */ }
 
 input, button {
   margin: 0;
@@ -79,14 +86,18 @@ select {
 p {
   margin: 0;
   padding: 0;
-  word-break: keep-all; }
+  word-break: keep-all;
+  color: #002118;
+  /* text color */ }
 
 hr {
   display: none; }
 
 pre {
   overflow-x: scroll;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  color: #002118;
+  /* text color */ }
 
 table {
   border-collapse: collapse;
@@ -105,7 +116,8 @@ body, p, span, pre, i, b, a {
   font-weight: normal;
   font-style: normal;
   font-family: "NEXON Lv2 Gothic", sans-serif;
-  color: #002118; }
+  color: #002118;
+  /* text color */ }
 
 #empty {
   top: 0;
@@ -130,11 +142,11 @@ body, p, span, pre, i, b, a {
 /* _mixin.scss */
 /* _header.scss */
 header {
-  position: fixed;
   width: 300px;
   height: 100vh;
   top: 0px;
   z-index: 99;
+  position: fixed;
   left: 100%; }
   @media screen and (min-width: 1000px) {
     header {
@@ -149,11 +161,11 @@ header {
     header {
       width: 70%; } }
   header #mark {
-    position: absolute;
     width: 62.5px;
     height: 50px;
     top: 30%;
     z-index: 1;
+    position: absolute;
     left: -62.5px;
     cursor: pointer; }
     @media screen and (max-width: 1000px) {
@@ -161,46 +173,46 @@ header {
         top: 5%; } }
     @media screen and (max-width: 700px) {
       header #mark {
-        position: absolute;
         width: 50px;
         height: 40px;
         top: 5%;
         z-index: 1;
+        position: absolute;
         left: -50px; } }
     header #mark .box {
-      position: absolute;
       width: 50px;
       height: 50px;
       top: 0px;
       z-index: 3;
+      position: absolute;
       box-sizing: border-box;
       padding: 10px;
       background: #00ffbc;
       right: 0; }
       @media screen and (max-width: 700px) {
         header #mark .box {
-          position: absolute;
           width: 40px;
           height: 40px;
           top: 0px;
-          z-index: 3; } }
+          z-index: 3;
+          position: absolute; } }
     header #mark .tail {
-      position: absolute;
       width: 12.5px;
       height: 12.5px;
       top: 0px;
       z-index: 1;
+      position: absolute;
       left: -12.5px;
       box-sizing: border-box;
       border-width: 25px;
       border-style: solid; }
       @media screen and (max-width: 700px) {
         header #mark .tail {
-          position: absolute;
           width: 10px;
           height: 10px;
           top: 0px;
           z-index: 1;
+          position: absolute;
           left: -10px;
           border-width: 20px; } }
       header #mark .tail.up {
@@ -254,11 +266,11 @@ header {
       text-transform: uppercase; }
       #hd .hd1li a::after {
         content: '';
-        position: absolute;
         width: 0px;
         height: 0px;
         top: 100%;
         z-index: 1;
+        position: absolute;
         left: 0;
         width: 0%;
         height: 2px;
@@ -292,32 +304,32 @@ header {
 /* _home.scss */
 #home {
   position: relative;
-  height: 100vh;
   margin: 0 auto;
   padding: 5vh 5px;
   width: 1000px;
   width: 100%;
+  height: 100vh;
   text-align: center;
   overflow: hidden; }
   @media screen and (max-width: 1000px) {
     #home {
       width: 100%;
       padding: 5vh 20px; } }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 560px) {
     #home {
       width: 100%;
-      padding: 5vh 20px; } }
+      padding: 5vh 10px; } }
   #home:after {
     content: '';
     display: block;
     visibility: hidden;
     clear: both; }
   #home .flow_wr {
-    position: absolute;
     width: 100%;
     height: 100%;
     top: 0px;
     z-index: 1;
+    position: absolute;
     left: 0;
     border-bottom: 60px solid #00ffbc;
     box-sizing: border-box; }
@@ -530,18 +542,18 @@ header {
 /* _about.scss */
 section {
   position: relative;
-  height: 100vh;
   margin: 0 auto;
   padding: 5vh 5px;
-  width: 1000px; }
+  width: 1000px;
+  overflow: hidden; }
   @media screen and (max-width: 1000px) {
     section {
       width: 100%;
       padding: 5vh 20px; } }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 560px) {
     section {
       width: 100%;
-      padding: 5vh 20px; } }
+      padding: 5vh 10px; } }
   section:after {
     content: '';
     display: block;
@@ -560,10 +572,11 @@ section {
     -ms-display: flexbox;
     align-items: center; }
     section .sec_hd h1 {
-      font-size: 2.5rem; }
+      font-size: 2.5rem;
+      text-transform: uppercase; }
       @media screen and (max-width: 700px) {
         section .sec_hd h1 {
-          font-size: 10vw; } }
+          font-size: 8vw; } }
       @media screen and (max-width: 560px) {
         section .sec_hd h1 {
           font-size: 8vw; } }
@@ -678,5 +691,167 @@ section {
 @media screen and (max-width: 1000px) {
   #about .skill {
     flex-wrap: wrap; } }
+@media screen and (max-width: 700px) {
+  #about .skill_item p {
+    font-size: 0.9em; }
+  #about .skill_cir {
+    width: 75px;
+    height: 75px; } }
+@media screen and (max-width: 560px) {
+  #about .skill_cir {
+    width: 70px;
+    height: 70px; } }
+
+/* _portfolio.scss */
+.port_wr {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, auto));
+  column-gap: 30px;
+  row-gap: 30px;
+  grid-auto-rows: minmax(300px, auto); }
+  @media screen and (max-width: 700px) {
+    .port_wr {
+      grid-template-columns: 1fr; } }
+  .port_wr .project {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #eee;
+    overflow: hidden; }
+    .port_wr .project .project_desc {
+      position: absolute;
+      width: 100%;
+      height: 0;
+      bottom: -20px;
+      background: rgba(0, 255, 188, 0.4);
+      transition: height .3s;
+      padding: 10px;
+      box-sizing: border-box; }
+    .port_wr .project:hover .project_desc {
+      height: 45%; }
+
+.project_desc .project_name {
+  font-size: 1.4rem;
+  font-family: "NEXON Lv2 Gothic Bold", sans-serif;
+  margin-bottom: 15px; }
+.project_desc .project_time, .project_desc .project_per {
+  font-size: 1.1em;
+  line-height: 1.5; }
+  .project_desc .project_time span, .project_desc .project_per span {
+    font-size: 1.1em;
+    margin: 0 5px; }
+
+.popup_wr {
+  width: 60%;
+  height: 80%;
+  top: 50%;
+  z-index: 91;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 50px;
+  background: #002118;
+  border-radius: 20px;
+  column-gap: 20px;
+  grid-auto-rows: minmax(200px, auto); }
+  @media screen and (max-width: 1000px) {
+    .popup_wr {
+      width: 80%; } }
+  .popup_wr .pp_img a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #eee; }
+  .popup_wr .pp_desc .pp_name, .popup_wr .pp_desc .pp_de {
+    color: #fff;
+    line-height: 1.8;
+    cursor: default; }
+  .popup_wr .pp_desc .pp_link, .popup_wr .pp_desc .pp_git {
+    margin: 0 5px;
+    transition: color .3s;
+    color: #fff;
+    font-family: "NEXON Lv2 Gothic Bold", sans-serif; }
+    .popup_wr .pp_desc .pp_link:hover, .popup_wr .pp_desc .pp_git:hover {
+      color: #00ffbc; }
+  .popup_wr .pp_desc .pp_time, .popup_wr .pp_desc .pp_per, .popup_wr .pp_desc .pp_lang {
+    color: #fff;
+    margin: 0 5px; }
+  .popup_wr .pp_desc h6 {
+    font-size: 1.4em;
+    margin-bottom: 15px; }
+  .popup_wr .pp_desc .pp_tm {
+    margin-bottom: 15px; }
+  @media screen and (max-width: 850px) {
+    .popup_wr {
+      grid-template-columns: 1fr; }
+      .popup_wr .pp_img {
+        margin-bottom: 10px; }
+      .popup_wr .pp_tm {
+        margin-bottom: 10px; } }
+
+/* _contact.scss */
+.con_wr {
+  margin: 40px 0; }
+
+.con_desc {
+  width: 70%;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 3;
+  padding: 40px;
+  border-radius: 5px;
+  border: 2px solid #eee; }
+  .con_desc a {
+    display: block;
+    font-size: 1.5em;
+    font-family: "NEXON Lv2 Gothic Bold", sans-serif;
+    text-transform: uppercase;
+    position: relative; }
+    .con_desc a::after {
+      content: '← click';
+      position: absolute;
+      right: 0;
+      font-size: 0.6em;
+      font-family: "NEXON Lv2 Gothic", sans-serif;
+      top: 10px;
+      opacity: 0;
+      transition: opacity .3s;
+      color: #00ffbc; }
+    .con_desc a:hover::after {
+      opacity: 1; }
+    @media screen and (max-width: 560px) {
+      .con_desc a::after {
+        opacity: 1; }
+      .con_desc a:hover::after {
+        font-family: "NEXON Lv2 Gothic Bold", sans-serif; } }
+
+/* _footer.scss */
+footer {
+  text-align: center;
+  margin: 10px 0; }
+
+#ie {
+  text-align: center;
+  line-height: 1.4;
+  font-size: 3vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  word-break: keep-all;
+  word-wrap: break-word;
+  display: none; }
+  @media screen and (max-width: 700px) {
+    #ie {
+      font-size: 4vw; } }
 
 /*# sourceMappingURL=main.css.map */

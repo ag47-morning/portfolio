@@ -33,12 +33,14 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.2em; /* head font size */
     font-family: $fontB; /* head font family */
     font-weight: normal; 
+    color: $color_text; /* text color */
 } 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block; }
 ul, dl, dt, dd, ol {
     margin: 0; 
     padding: 0; 
     list-style: none; 
+    color: $color_text; /* text color */
 }
 legend, .sound_only {
     position: absolute; 
@@ -52,6 +54,7 @@ legend, .sound_only {
 label, input, button, select, img { 
     vertical-align: middle; 
     font-size: 1.1em; 
+    color: $color_text; /* text color */
 }
 input, button { 
     margin: 0; 
@@ -66,11 +69,13 @@ p {
     margin: 0; 
     padding: 0; 
     word-break: keep-all; 
+    color: $color_text; /* text color */
 }
 hr {display: none; }
 pre {
     overflow-x: scroll; 
     font-size: 1.2em; 
+    color: $color_text; /* text color */
 }
 table {
     border-collapse: collapse; 
@@ -89,7 +94,7 @@ body, p, span, pre, i, b, a {
     font-weight: normal; 
     font-style: normal; 
     font-family: $fontR; 
-    color: $color_text;
+    color: $color_text; /* text color */
 }
 #empty {
     top: 0;

@@ -2,38 +2,38 @@
 /* _header.scss */
 
 header {
-    @include poa(fixed, 300, 100vh, 0, 99) {
+    @include poa(300, 100vh, 0, 99, fixed) {
         left: 100%;
         @include head-width;
     }
     #mark {
-        @include poa(absolute, $mark_box_w, $mark_box_h, 30%, 1){
+        @include poa($mark_box_w, $mark_box_h, 30%, 1){
             left: -$mark_box_w;
             cursor: pointer;
             @include respond($default_width) {top: 5%;}
             @include respond($min_width) {
-                @include poa (absolute, $mark_box_w_m, $mark_box_h_m,5%,1) {left: -$mark_box_w_m;}
+                @include poa ($mark_box_w_m, $mark_box_h_m,5%,1) {left: -$mark_box_w_m;}
             }
         };
         .box {
-            @include poa(absolute, $mark_box_h, $mark_box_h, 0, 3){
+            @include poa($mark_box_h, $mark_box_h, 0, 3){
                 box-sizing: border-box;
                 padding: 10px;
                 background: $color_point;
                 right: 0;
                 @include respond($min_width) {
-                    @include poa (absolute, $mark_box_h_m, $mark_box_h_m,0,3);
+                    @include poa ($mark_box_h_m, $mark_box_h_m,0,3);
                 }
             }
         }
         .tail {
-            @include poa(absolute, $mark_box_t, $mark_box_t, 0, 1){
+            @include poa($mark_box_t, $mark_box_t, 0, 1){
                 left: -$mark_box_t;
                 box-sizing: border-box;
                 border-width: $mark_box_t * 2;
                 border-style: solid;
                 @include respond($min_width) {
-                    @include poa (absolute, $mark_box_t_m, $mark_box_t_m,0,1) {
+                    @include poa ($mark_box_t_m, $mark_box_t_m,0,1) {
                         left: -$mark_box_t_m;
                         border-width: $mark_box_t_m * 2;
                     }
@@ -83,7 +83,7 @@ header {
             text-transform: uppercase;
             &::after {
                 content:'';
-                @include poa(absolute, 0, 0, 100%, 1) {
+                @include poa(0, 0, 100%, 1) {
                     left: 0;
                     @include bars(0%, 2, $color_text, 10) {
                         transition: width $hover_time;

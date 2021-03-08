@@ -2,11 +2,11 @@
 /* _home.scss */
 
 #home {
-    @include section-option {width: 100%;};
+    @include section-option {width: 100%; height: 100vh;};
     text-align: center;
     overflow: hidden;
     .flow_wr {
-        @include poa(absolute, 100%, 100%, 0, 1) {
+        @include poa(100%, 100%, 0, 1) {
             left: 0; 
             border-bottom: 60px solid $color_point;
             box-sizing: border-box;
