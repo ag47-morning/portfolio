@@ -59,18 +59,37 @@ $(document).ready(function(){
         b = flip_item.eq(h).css('transform');
         flipOption.push(b);
     }
-    console.log(flipOption);
-
+    
     function flipDown() {
-
+        
         $("#flip").css('transform','rotateX('+(c*90)+'deg)');
         flip_item.css('opacity',0);
         flip_item.eq(a).stop().animate({opacity:1},flipTime/100);
         a++; c++;
         if (a >=flip_item.length) a = 0;
         flip_item.eq(a).stop().animate({opacity:0},flipTime/10);
-
+        
+    }
+    
+    setInterval(function(){flipDown();},flipTime);
+    /////////// #home event finish ///////////
+    
+    /////////// .skill effect  ///////////
+    var x;
+    var skill_item = $("#about .skill_item");
+    var skill_cir = $(".skill_cir");
+    // var skill_cir_desc = Number($("#about .skill_cir_desc").text().split('%')[0]);
+    var skill_cir_desc = new Array();
+    for (var zz = 0; zz < skill_item.length; zz++) {
+        x = skill_item.eq(zz).text();
+        skill_cir_desc.push(Number(x.split('%')[0]));
+    }
+    console.log(skill_cir_desc);
+    for (var z = 0; z<skill_item.length; z++) {
+        skill_item.eq(z).find(".skill_cir_bak").css("border-bottom-width",(0.75*skill_cir_desc[z])+"px");
     }
 
-    setInterval(function(){flipDown();},flipTime);
+    /////////// .skill effect finish  ///////////
+
 })
+

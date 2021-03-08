@@ -18,23 +18,24 @@ $color_hover : rgba(0,255,188,0.4);
 
 html{overflow-y: scroll;}
 html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0;}
-body {margin: 0; padding: 0; font-size: 0.94em; overflow: hidden; background: $color_back;} // body font size
-h1, h2, h3, h4, h5, h6 {font-size: 1.2em; font-family: $fontB; font-weight: normal; } // header font size
+body {margin: 0; padding: 0; font-size: 0.94em; overflow: hidden; background: $color_back; color: $color_text;} // body font size
+h1, h2, h3, h4, h5, h6 {font-size: 1.2em; font-family: $fontB; font-weight: normal; color: $color_text; } // header font size
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block; }
-ul, dl, dt, dd, ol {margin: 0; padding: 0; list-style: none; }
+ul, dl, dt, dd, ol {margin: 0; padding: 0; list-style: none; color: $color_text;}
 legend {position: absolute; margin: 0; padding: 0; font-size: 0; line-height: 0; text-indent: -9999em; overflow: hidden; }
-label, input, button, select, img { vertical-align: middle; font-size: 1.1em; }
+label, input, button, select, img { vertical-align: middle; font-size: 1.1em; color: $color_text;}
 input, button { margin: 0; padding: 0; outline: none; font-size: 1.1em; } //btn font size
 input[type="submit"], button {cursor: pointer; }
 textarea, select {font-size: 1.1em;} // textarea font size
 select {margin: 0;}
-p {margin: 0; padding: 0; word-break: keep-all; }
+p {margin: 0; padding: 0; word-break: keep-all; color: $color_text;}
 hr {display: none; }
 pre {overflow-x: scroll; font-size: 1.2em; }
 table {border-collapse: collapse; border-spacing: 0;}
 a {text-decoration: none; color: $color_text;}
 *, :after, :before {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 body, p, span, pre, i, b, a {font-weight: normal; font-style: normal; font-family: $fontR; color: $color_text;}
+div {color: $color_text;}
     
 /* } 초기화 끝  */
 
@@ -46,7 +47,7 @@ footer {width: 100%;}
     width: 100%;
     $por : relative;
     section {
-        width: 1000px; position:$por; height: 100vh; margin: 0 auto; padding: 5vh 0;
+        width: 1000px; position:$por; height: 100vh; margin: 0 auto; padding: 5vh 0; color: $color_text;
         &:after { content:''; display: block; visibility: hidden; clear: both;}
     }
     @at-root footer, #hd {position: $por;}

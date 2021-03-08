@@ -176,6 +176,6 @@
     @include header-color($color_point);
     font-size: 1.4rem;
     @include respond($mobile_width) {font-size: 1.3rem;}
-    margin: 20px 0;
+    margin: 40px 0 30px;
     text-transform: uppercase;
 }
