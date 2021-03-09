@@ -6,6 +6,7 @@
     <title>Eunjo Park's Portfolio</title>
     <link rel="stylesheet" href="css/main.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/ajax.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>
@@ -167,34 +168,14 @@
                         <div></div>
                     </div>
                     <div class="port_wr">
-                        <div class="project" data-hash="1">
+                        <!-- <div class="project" data-hash="1">
+                            <img src="http://placehold.it/800x500" alt="">
                             <div class="project_desc">
                                 <div class="project_name">Lorem ipsum dolor sit.</div>
                                 <div class="project_time">제작 기간 : <span>000</span>시간</div>
                                 <div class="project_per">제작 참여도 : <span>100</span>%</div>
                             </div>
-                        </div>
-                        <div class="project">
-                            <div class="project_desc">
-                                <div class="project_name">Lorem ipsum dolor sit.</div>
-                                <div class="project_time"><span>000</span>시간</div>
-                                <div class="project_per"><span>100</span>%</div>
-                            </div>
-                        </div>
-                        <div class="project">
-                            <div class="project_desc">
-                                <div class="project_name">Lorem ipsum dolor sit.</div>
-                                <div class="project_time"><span>000</span>시간</div>
-                                <div class="project_per"><span>100</span>%</div>
-                            </div>
-                        </div>
-                        <div class="project">
-                            <div class="project_desc">
-                                <div class="project_name">Lorem ipsum dolor sit.</div>
-                                <div class="project_time"><span>000</span>시간</div>
-                                <div class="project_per"><span>100</span>%</div>
-                            </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="popup_wr">
@@ -208,6 +189,7 @@
                         <p class="pp_de pp_tm">github : <a href="#" class="pp_git">http://placehold.it</a></p>
                         <p class="pp_de pp_txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ea cumque commodi quasi voluptate sit, veniam ad possimus? Aliquid quos et porro magni iusto perferendis? Consectetur exercitationem distinctio ab ratione.</p>
                     </div>
+                    <button id="project_close">X</button>
                 </div>
             </section>
             <section id="contact">
@@ -219,7 +201,7 @@
                     <div class="con_wr">
                         <div class="con_desc">
                             <a href="#">e-mail</a>
-                            <a href="#">github</a>
+                            <a href="https://github.com/ag47-morning">github</a>
                             <a href="#">resume</a>
                         </div>
                     </div>
@@ -230,6 +212,7 @@
             <div id="ft">ⓒ 2020 박은조 all rights reserved.</div>
         </footer>
         <div id="empty"><span class="sound_only">클릭방지용 빈공간</span></div>
+        <div id="empty2"><span class="sound_only">클릭방지용 빈공간</span></div>
     </div>
     <div id="ie">
         <h6>현재 페이지는 "크롬(Chrome)" 에 맞춰 제작되었습니다.<br/>다른 브라우저를 이용해주세요 :)</h6>

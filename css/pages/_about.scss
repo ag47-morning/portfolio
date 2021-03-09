@@ -29,7 +29,8 @@ section{
         .profile_img {
             width: 300px;
             height: 400px;
-            background-image: url('http://placehold.it/300x400');
+            background-color: $color_line;
+            background-image: url('../../images/hi.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;

@@ -2,7 +2,7 @@
 /* _contact.scss */
 
 .con_wr {
-    margin: 40px 0;
+    margin: 80px 0;
 }
 .con_desc {
     width: 70%;
@@ -12,7 +12,7 @@
     padding: 40px;
     border-radius: 5px;
     border: 2px solid $color_line;
-    a{
+    a, span{
         display: block;
         font-size: 1.5em;
         font-family: $fontB;
@@ -31,7 +31,7 @@
         }
         &:hover::after {opacity: 1;}
         @include respond($mobile_width) {
-            &::after {opacity: 1;}
+            &::after {opacity: 1; font-size: 0.4em; top: 20px;}
             &:hover::after{font-family: $fontB;}
         }
     }

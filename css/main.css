@@ -119,7 +119,7 @@ body, p, span, pre, i, b, a {
   color: #002118;
   /* text color */ }
 
-#empty {
+#empty, #empty2 {
   top: 0;
   left: 0;
   position: fixed;
@@ -129,7 +129,7 @@ body, p, span, pre, i, b, a {
   opacity: 0.2;
   display: none;
   z-index: 90; }
-  #empty.open {
+  #empty.open, #empty2.open {
     display: block; }
 
 /* _variables.scss */
@@ -615,7 +615,8 @@ section {
 #about .profile .profile_img {
   width: 300px;
   height: 400px;
-  background-image: url("http://placehold.it/300x400");
+  background-color: #eee;
+  background-image: url("../../images/hi.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain; }
@@ -704,6 +705,7 @@ section {
 
 /* _portfolio.scss */
 .port_wr {
+  margin: 50px 0 20px;
   display: grid;
   grid-template-columns: repeat(2, minmax(200px, auto));
   column-gap: 30px;
@@ -732,6 +734,15 @@ section {
       box-sizing: border-box; }
     .port_wr .project:hover .project_desc {
       height: 45%; }
+    @media screen and (max-width: 560px) {
+      .port_wr .project .project_desc {
+        height: 45%;
+        background: #00ffbc; } }
+    .port_wr .project.open {
+      border: 5px solid rgba(0, 255, 188, 0.4);
+      border-radius: 5px; }
+      .port_wr .project.open .project_desc {
+        height: 45%; }
 
 .project_desc .project_name {
   font-size: 1.4rem;
@@ -758,10 +769,15 @@ section {
   background: #002118;
   border-radius: 20px;
   column-gap: 20px;
-  grid-auto-rows: minmax(200px, auto); }
+  grid-auto-rows: minmax(200px, auto);
+  overflow: hidden; }
   @media screen and (max-width: 1000px) {
     .popup_wr {
       width: 80%; } }
+  @media screen and (max-width: 560px) {
+    .popup_wr {
+      width: 85%;
+      height: 90%; } }
   .popup_wr .pp_img a {
     display: inline-block;
     width: 100%;
@@ -795,11 +811,43 @@ section {
       .popup_wr .pp_img {
         margin-bottom: 10px; }
       .popup_wr .pp_tm {
+        margin-bottom: 10px; }
+      .popup_wr .pp_name, .popup_wr .pp_de {
+        line-height: 1.3; }
+      .popup_wr h6 {
         margin-bottom: 10px; } }
+  @media screen and (max-width: 560px) {
+    .popup_wr {
+      padding: 40px 10px 10px;
+      grid-auto-rows: auto;
+      column-gap: 0;
+      overflow: scroll; }
+      .popup_wr .pp_img {
+        display: none; } }
+
+.popup_wr.open {
+  display: grid; }
+
+#project_close {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 20px;
+  top: 20px;
+  color: #fff;
+  background: transparent;
+  border: 0;
+  font-size: 2em; }
+  @media screen and (max-width: 560px) {
+    #project_close {
+      left: 45%;
+      top: 10px;
+      width: 25px;
+      height: 25px; } }
 
 /* _contact.scss */
 .con_wr {
-  margin: 40px 0; }
+  margin: 80px 0; }
 
 .con_desc {
   width: 70%;
@@ -809,13 +857,13 @@ section {
   padding: 40px;
   border-radius: 5px;
   border: 2px solid #eee; }
-  .con_desc a {
+  .con_desc a, .con_desc span {
     display: block;
     font-size: 1.5em;
     font-family: "NEXON Lv2 Gothic Bold", sans-serif;
     text-transform: uppercase;
     position: relative; }
-    .con_desc a::after {
+    .con_desc a::after, .con_desc span::after {
       content: '← click';
       position: absolute;
       right: 0;
@@ -825,12 +873,14 @@ section {
       opacity: 0;
       transition: opacity .3s;
       color: #00ffbc; }
-    .con_desc a:hover::after {
+    .con_desc a:hover::after, .con_desc span:hover::after {
       opacity: 1; }
     @media screen and (max-width: 560px) {
-      .con_desc a::after {
-        opacity: 1; }
-      .con_desc a:hover::after {
+      .con_desc a::after, .con_desc span::after {
+        opacity: 1;
+        font-size: 0.4em;
+        top: 20px; }
+      .con_desc a:hover::after, .con_desc span:hover::after {
         font-family: "NEXON Lv2 Gothic Bold", sans-serif; } }
 
 /* _footer.scss */

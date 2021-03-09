@@ -1,4 +1,12 @@
 $(function(){
+
+    var agent = navigator.userAgent.toLowerCase();
+
+    if ( (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1) ){
+        $("#body").css("display","none");
+        $("#ie").css("display","block");
+    }
+
     /////////// head event ///////////
 
     // scroll
@@ -94,5 +102,11 @@ $(document).ready(function(){
     }
 
     /////////// .skill effect finish  ///////////
-})
 
+    // project open, close
+    $("#empty2, #project_close").on("click", function(){
+        $(".project").removeClass('open');
+        $("#empty2").toggleClass('open');
+        $(".popup_wr").toggleClass('open');
+    })
+})
